@@ -5,8 +5,9 @@ import com.mongo.disable_query_derivation_example.domain.repositories.CustomSnsR
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.repository.core.support.RepositoryMetadataAccess;
 
-public class CustomSnsRepositoryImpl implements CustomSnsRepository {
+public class CustomSnsRepositoryImpl<T> implements CustomSnsRepository<T>, RepositoryMetadataAccess {
     private final MongoTemplate mongoTemplate;
     
     public CustomSnsRepositoryImpl(MongoTemplate mongoTemplate) {
